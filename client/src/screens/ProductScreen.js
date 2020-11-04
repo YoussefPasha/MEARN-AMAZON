@@ -1,9 +1,17 @@
-import React from "react";
-import data from "../data";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Rating from "../components/Rating";
+import axios from "axios";
 const ProductScreen = ({ match }) => {
-  const product = data.products.find((x) => x._id === match.params.id);
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const { data } = await axios.get("/api/products");
+      setProducts(data);
+    };
+    fetchData();
+  }, []);
+  const product = products.find((x) => x._id === match.params.id);
   if (!product) {
     return <div> Product Not Found</div>;
   }
@@ -45,7 +53,7 @@ const ProductScreen = ({ match }) => {
                     {product.countInStock > 0 ? (
                       <span className="success">In Stock</span>
                     ) : (
-                      <span className="error">Unavailable</span>
+                      <span className="danger">Unavailable</span>
                     )}
                   </div>
                 </div>
