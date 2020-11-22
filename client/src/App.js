@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import SignInScreen from "./screens/SignInScreen";
 import { signout } from "./actions/userActions";
+import RegisterScreen from "./screens/RegisterScreen";
 function App() {
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
@@ -52,8 +53,9 @@ function App() {
         <main>
           <Route path="/cart/:id?" component={CartScreen} />
           <Route path="/product/:id" component={ProductScreen} />
-          <Route path="/" component={HomeScreen} exact />
           <Route path="/signin" component={SignInScreen} exact />
+          <Route path="/register" component={RegisterScreen} exact />
+          <Route path="/" component={HomeScreen} exact />
         </main>
         <footer className="row center">All right reserved</footer>
       </div>
