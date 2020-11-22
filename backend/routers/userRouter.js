@@ -50,6 +50,7 @@ userRouter.post(
       name: createdUser.name,
       email: createdUser.email,
       isAdmin: createdUser.isAdmin,
+      isSeller: user.isSeller,
       token: generateToken(createdUser),
     });
   })
