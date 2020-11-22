@@ -10,6 +10,7 @@ export default function RegisterScreen(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [valid, setValid] = useState(0);
 
   const redirect = props.location.search
     ? props.location.search.split("=")[1]
@@ -22,7 +23,7 @@ export default function RegisterScreen(props) {
   const submitHandler = (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
-      alert("Password and confirm password are not match");
+      setValid(1);
     } else {
       dispatch(register(name, email, password));
     }
@@ -38,6 +39,11 @@ export default function RegisterScreen(props) {
         <div>
           <h1>Create Account</h1>
         </div>
+        {valid === 1 && (
+          <MessageBox variant="danger">
+            Password and confirm password are not match
+          </MessageBox>
+        )}
         {loading && <LoadingBox></LoadingBox>}
         {error && <MessageBox variant="danger">{error}</MessageBox>}
         <div>
