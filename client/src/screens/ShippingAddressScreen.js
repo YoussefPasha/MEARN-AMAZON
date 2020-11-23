@@ -36,7 +36,6 @@ export default function ShippingAddressScreen(props) {
             type="text"
             id="fullName"
             placeholder="Enter full name"
-            value={fullName}
             onChange={(e) => setFullName(e.target.value)}
             required
           />
@@ -47,7 +46,6 @@ export default function ShippingAddressScreen(props) {
             type="text"
             id="address"
             placeholder="Enter Address"
-            value={address}
             onChange={(e) => setAddress(e.target.value)}
             required
           />
@@ -58,7 +56,6 @@ export default function ShippingAddressScreen(props) {
             type="text"
             id="city"
             placeholder="Enter City"
-            value={city}
             onChange={(e) => setCity(e.target.value)}
             required
           />
@@ -69,7 +66,6 @@ export default function ShippingAddressScreen(props) {
             type="text"
             id="postalCode"
             placeholder="Enter Postal Code"
-            value={postalCode}
             onChange={(e) => setPostalCode(e.target.value)}
             required
           />
@@ -80,7 +76,6 @@ export default function ShippingAddressScreen(props) {
             type="text"
             id="country"
             placeholder="Enter Country"
-            value={country}
             onChange={(e) => setCountry(e.target.value)}
             required
           />
