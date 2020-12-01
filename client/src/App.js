@@ -6,6 +6,7 @@ import HomeScreen from "./screens/HomeScreen";
 import CartScreen from "./screens/CartScreen";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import PrivateRoute from "./components/PrivateRoute";
 import SignInScreen from "./screens/SignInScreen";
 import { signout } from "./actions/userActions";
 import RegisterScreen from "./screens/RegisterScreen";
@@ -75,7 +76,7 @@ function App() {
           <Route path="/placeorder" component={PlaceOrderScreen} exact />
           <Route path="/order/:id" component={OrderScreen} exact />
           <Route path="/orderhistory" component={OrderHistoryScreen} exact />
-          <Route path="/profile" component={ProfileScreen} exact />
+          <PrivateRoute path="/profile" component={ProfileScreen} exact />
           <Route path="/" component={HomeScreen} exact />
         </main>
         <footer className="row center">All right reserved</footer>
