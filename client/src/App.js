@@ -1,6 +1,5 @@
 import React from "react";
-import { BrowserRouter } from "react-router-dom";
-import { Route } from "react-router-dom/cjs/react-router-dom.min";
+import { BrowserRouter, Route } from "react-router-dom";
 import ProductScreen from "./screens/ProductScreen";
 import HomeScreen from "./screens/HomeScreen";
 import CartScreen from "./screens/CartScreen";
