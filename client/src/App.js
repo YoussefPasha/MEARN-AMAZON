@@ -1,5 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
+import AdminRoute from "./components/AdminRoute";
+import ProductListScreen from "./screens/ProductListScreen";
 import ProductScreen from "./screens/ProductScreen";
 import HomeScreen from "./screens/HomeScreen";
 import CartScreen from "./screens/CartScreen";
@@ -97,6 +99,7 @@ function App() {
           <Route path="/order/:id" component={OrderScreen} exact />
           <Route path="/orderhistory" component={OrderHistoryScreen} exact />
           <PrivateRoute path="/profile" component={ProfileScreen} exact />
+          <AdminRoute path="/productlist" component={ProductListScreen} exact />
           <Route path="/" component={HomeScreen} exact />
         </main>
         <footer className="row center">All right reserved</footer>
