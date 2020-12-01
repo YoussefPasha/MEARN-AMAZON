@@ -67,7 +67,7 @@ export const payOrder = (order, paymentResult) => async (
 ) => {
   dispatch({ type: ORDER_PAY_REQUEST, payload: { order, paymentResult } });
   const {
-    userSignin: { userInfo },
+    userSignIn: { userInfo },
   } = getState();
   try {
     const { data } = Axios.put(`/api/orders/${order._id}/pay`, paymentResult, {
@@ -86,7 +86,7 @@ export const payOrder = (order, paymentResult) => async (
 export const listOrderMine = () => async (dispatch, getState) => {
   dispatch({ type: ORDER_MINE_LIST_REQUEST });
   const {
-    userSignin: { userInfo },
+    userSignIn: { userInfo },
   } = getState();
   try {
     const { data } = await Axios.get("api/orders/mine", {
