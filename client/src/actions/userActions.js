@@ -109,7 +109,7 @@ export const listUsers = () => async (dispatch, getState) => {
   dispatch({ type: USER_LIST_REQUEST });
   try {
     const {
-      userSignin: { userInfo },
+      userSignIn: { userInfo },
     } = getState();
     const { data } = await Axios.get("/api/users", {
       headers: {
