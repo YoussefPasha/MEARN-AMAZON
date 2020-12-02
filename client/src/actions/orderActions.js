@@ -132,7 +132,7 @@ export const listOrders = () => async (dispatch, getState) => {
 export const deleteOrder = (orderId) => async (dispatch, getState) => {
   dispatch({ type: ORDER_DELETE_REQUEST, payload: orderId });
   const {
-    userSignin: { userInfo },
+    userSignIn: { userInfo },
   } = getState();
   try {
     const { data } = Axios.delete(`/api/orders/${orderId}`, {
