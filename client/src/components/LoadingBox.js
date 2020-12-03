@@ -1,10 +1,7 @@
 import React from "react";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+ import Loader from "react-loader-spinner";
 
 export default function LoadingBox() {
-  return (
-    <div
-      className="Loader loading"
-      style={{ display: "flex", textAlign: "center" }}
-    ></div>
-  );
+  return <Loader type="Rings" color="#212121" />;
 }
