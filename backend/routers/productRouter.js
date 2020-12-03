@@ -9,7 +9,6 @@ const productRouter = express.Router();
 productRouter.get(
   "/",
   expressAsyncHandler(async (req, res) => {
-    // find " " to get all products
     const seller = req.query.seller || "";
     const sellerFilter = seller ? { seller } : {};
     const products = await Product.find({ ...sellerFilter }).populate(
