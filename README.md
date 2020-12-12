@@ -1,3 +1,3 @@
 ### MERN_AMAZON 
 
-![Preview](amazon.png?raw=true)
+![Preview](amazon.PNG?raw=true)
